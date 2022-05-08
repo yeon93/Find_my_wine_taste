@@ -21,7 +21,14 @@
 ## Model
 + KModes 모델 이용
 + 클러스터링에 사용할 feature들만 선택 (wine, appellation, rating, reviwer, review는 이후 추천 시스템에서 활용)
-+ n_clusters=300, n_init=5, init='random'
++ n_clusters=100, n_init=5, init='random'
 + 클러스터링 결과(1~300 값)를 Data에 추가, appellation 관련 새로 만든 feature들 drop  
   => 추천 시스템에서 사용할 데이터셋 (323065, 12)  
   => sqlite 데이터베이스에 저장
+
+
+
+## 추천 시스템
++ 위에서 학습한 KModes 모델 부호화(pickle 라이브러리 사용)
++ Flask, Bootstrap 활용해 웹페이지 개발 및 배포
++ 웹페이지에서 사용자가 가진 와인의 데이터를 입력하면 해당 와인과 같은 클러스터에 있는 평점이 가장 높은 와인들을 순서대로 보여줌(SQL 명령어 활용)
