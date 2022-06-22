@@ -11,7 +11,7 @@
 
 
 
-## 솔루션
+## 아이디어
 '예전에 xx와인 마셔봤을 때 맛있던데, 그거랑 비슷한 다른 와인 또 없나?'  
 =>특정 와인에 대한 특성을 입력하면 그와 유사한 와인을 평점 순으로 추천해주는 서비스 개발
 
@@ -31,7 +31,8 @@
 
 
 ## Model
-+ KModes 모델 이용
++ 데이터의 특성당 범주가 매우 많아 모두 인코딩하기가 어려움  
+ => 범주형 자료에 바로 적용가능한 클러스터링 모델인 KModes 이용
 + 클러스터링에 사용할 feature들만 선택 (wine, appellation, rating, reviwer, review는 이후 추천 시스템에서 활용)
 ![elbow_method_for_optimal_k](https://user-images.githubusercontent.com/88722429/170510089-5a4eff65-58a6-4d28-9bb4-bbaecadbbe5e.png)
 + n_clusters=100, n_init=5, init='random'
@@ -40,3 +41,6 @@
 
 
 
+## 문제점
+모든 데이터를 100개의 클러스터로 나누는 데에는 성공했으나,   
+이를 학습한 모델을 이용해 새로운 와인 데이터를 예측하면 항상 같은 클러스터로 예상함
